@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-
 require 'net/http'
 
 # Object for interacting with the api
@@ -77,11 +76,3 @@ class Cellsynt
     res.body
   end
 end
-
-instance = Cellsynt.new('username', 'password')
-
-instance.config[:originator] = '0711223344'
-instance.config[:destination] = '0711223344'
-instance.config[:text] = 'A' * 160
-
-puts instance.send

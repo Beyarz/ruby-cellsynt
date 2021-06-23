@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.description = 'Ruby gem for interacting with the Cellsynt api'
   s.authors     = ['beyarz']
   s.email       = 'beyar-123@live.com'
-  s.files       = ['lib/ruby-cellsynt.rb']
+  s.files       = ['lib/cellsynt.rb']
   s.required_ruby_version = '>= 3.0.0'
   # s.add_dependency 'httparty', '~> 0.18.0'
   s.add_development_dependency "rubocop", "~> 1.17"
