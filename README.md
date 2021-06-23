@@ -1,6 +1,6 @@
 # Ruby-cellsynt
 
-Ruby gem for interacting with [Cellsynt.com](https://www.cellsynt.com/)
+Ruby gem for interacting with [Cellsynt.com](https://www.cellsynt.com/) [![Gem Version](https://badge.fury.io/rb/ruby-skynet.svg)](https://badge.fury.io/rb/ruby-skynet)
 
 ## Coverage
 
