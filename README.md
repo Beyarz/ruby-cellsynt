@@ -10,6 +10,8 @@ This gem allows you to interact with every parameter Cellsynt's sms gateway [off
 
 ### Send a plain sms with 450 characters
 
+The message size is checked at runtime. If you reach over the limit of 160 characters then the content switches into a linkable sms which concatenates the content allowing you to reach up to 918 characters instead. The parameters is automatically adjusted so you don't have to think about that.
+
 ```ruby
 require 'cellsynt'
 
@@ -55,7 +57,7 @@ For more examples see [EXAMPLES.md](EXAMPLES.md)
 
 ### Gemfile
 
-`gem 'ruby-skynet', '~> 1.3'`
+`gem 'ruby-cellsynt', '~> 1.0'`
 
 ## Dev
 
