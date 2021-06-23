@@ -8,8 +8,9 @@ This gem allows you to interact with every parameter Cellsynt's sms gateway [off
 
 ## Examples
 
+### Send a plain sms with 450 characters
+
 ```ruby
-# Send a plain sms with 450 characters
 require 'cellsynt'
 
 instance = Cellsynt.new('username', 'password')
@@ -21,8 +22,9 @@ instance.config[:text] = 'A' * 450
 puts instance.send # OK: 111AAA, 222BBB, 333CCC
 ```
 
+### Send a flash sms using credentials from your environment
+
 ```ruby
-# Send a flash sms using credentials from your environment
 require 'cellsynt'
 
 # Your environment should have these variables set

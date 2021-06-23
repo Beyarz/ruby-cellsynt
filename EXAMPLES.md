@@ -1,7 +1,8 @@
 # Examples
 
+## Send a sms with 'Service' as sender
+
 ```ruby
-# Send a sms with 'Service' as sender
 require 'cellsynt'
 
 instance = Cellsynt.new
@@ -14,8 +15,9 @@ instance.config[:text] = 'test'
 puts instance.send # OK: 123ABC
 ```
 
+## Send a sms with another charset
+
 ```ruby
-# Send a sms with another charset
 require 'cellsynt'
 
 instance = Cellsynt.new('username', 'password')
