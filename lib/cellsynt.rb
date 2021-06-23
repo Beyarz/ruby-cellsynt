@@ -5,7 +5,7 @@ require 'net/http'
 class Cellsynt
   SMS_CHAR_LIMIT = 160
   SMS_CONCAT_CHAR_LIMIT = 153
-  SMS_CONCAT_HARD_LIMIT = 918
+  SMS_CONCAT_HARD_LIMIT = 153 * 6
 
   attr_accessor :endpoint, :config
 
@@ -35,7 +35,7 @@ class Cellsynt
   end
 
   def adjust_concat(message)
-    return nil if message.chars.length == SMS_CONCAT_HARD_LIMIT
+    return nil if message.chars.length > SMS_CONCAT_HARD_LIMIT
 
     if message.chars.length > SMS_CHAR_LIMIT
       message_size = message.chars.length
