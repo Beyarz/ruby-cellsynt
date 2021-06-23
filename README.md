@@ -70,3 +70,7 @@ For more examples see [EXAMPLES.md](EXAMPLES.md)
 ### Lint
 
 `rubocop`
+
+## License
+
+MIT
