@@ -1,9 +1,8 @@
 # frozen_string_literal: true
 
 require 'net/http'
-require 'uri'
 
-# Cellsynt api
+# Object for interacting with the api
 class Cellsynt
   SMS_CHAR_LIMIT = 160
   SMS_CONCAT_CHAR_LIMIT = 153
@@ -14,10 +13,12 @@ class Cellsynt
   def initialize(username = nil, password = nil)
     @endpoint = 'https://se-1.cellsynt.net/sms.php'
 
-    @config = {
+    @auth = {
       username: username || ENV['cellsyntUser'],
-      password: password || ENV['cellsyntPass'],
+      password: password || ENV['cellsyntPass']
+    }
 
+    @config = {
       destination: nil,
       allowconcat: nil, # Values: 1 - 6
       originator: nil,  # Values: numeric, shortcode & alpha
@@ -66,7 +67,8 @@ class Cellsynt
     config[:destination] = format_destination(@config[:destination])
     config[:originator] = format_originator(@config[:originator])
 
-    req.set_form_data(@config)
+    form_data = @auth.merge(@config)
+    req.set_form_data(form_data)
 
     res = Net::HTTP.start(uri.hostname, uri.port, use_ssl: true, timeout: 300) do |packet|
       packet.request(req)
@@ -78,9 +80,8 @@ end
 
 instance = Cellsynt.new('username', 'password')
 
-instance.config[:flash] = true
-instance.config[:text] = 'A' * 160
 instance.config[:originator] = '0711223344'
 instance.config[:destination] = '0711223344'
+instance.config[:text] = 'A' * 160
 
 puts instance.send
