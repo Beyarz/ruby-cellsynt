@@ -3,7 +3,7 @@
 Ruby gem for interacting with [Cellsynt.com](https://www.cellsynt.com/)
 
 [![Gem Version](https://badge.fury.io/rb/ruby-cellsynt.svg)](https://badge.fury.io/rb/ruby-cellsynt)
-[![CodeScene Code Health](https://codescene.io/projects/10798/status-badges/code-health)](https://codescene.io/projects/10798)
+[![CodeScene Code Health](https://codescene.io/projects/16653/status-badges/code-health)](https://codescene.io/projects/16653)
 
 ## Coverage
 
